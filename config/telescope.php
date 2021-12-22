@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\UserAuthMiddleware;
 use App\Http\Middleware\UsersAuth;
 use Laravel\Telescope\Http\Middleware\Authorize;
 use Laravel\Telescope\Watchers;
@@ -79,7 +80,7 @@ return [
     'middleware' => [
         'web',
         Authorize::class,
-        UsersAuth::class,
+        UserAuthMiddleware::class,
     ],
 
     /*
